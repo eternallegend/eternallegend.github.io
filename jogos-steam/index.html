@@ -183,34 +183,78 @@ Comunidade de jogos para cegos, jogos acessíveis para cegos. eternal legend
 <h1 class="entry-title" itemprop="headline">jogos-steam</h1> </header> 
 <div class="entry-content clear" itemprop="text">
 <h2> Jogos da steam acessíveis ou jogáveis para cegos</h2>
-</div>
-</article>
-</main>
-</div>
-</div> 
-</div>
-<footer class="site-footer" id="colophon" itemtype="https://schema.org/WPFooter" itemscope="itemscope" itemid="#colophon">
-<div class="site-below-footer-wrap ast-builder-grid-row-container site-footer-focus-item ast-builder-grid-row-full ast-builder-grid-row-tablet-full ast-builder-grid-row-mobile-full ast-footer-row-stack ast-footer-row-tablet-stack ast-footer-row-mobile-stack" data-section="section-below-footer-builder">
-<div class="ast-builder-grid-row-container-inner">
-<div class="ast-builder-footer-grid-columns site-below-footer-inner-wrap ast-builder-grid-row">
-<div class="site-footer-below-section-1 site-footer-section site-footer-section-1">
-<div class="ast-builder-layout-element ast-flex site-footer-focus-item ast-footer-copyright" data-section="section-footer-builder">
-<div class="ast-footer-copyright">
-<p>Copyright &copy; 2023 Comunidade de jogos para cegos, jogos acessíveis para cegos. eternal legend | Powered by <a href="https://wpastra.com/" rel="nofollow noopener" target="_blank">Tema Astra para WordPress</a></p>
 </div> </div>
+</div>
+</div>
+</main>
+<footer class="site-footer" id="site-footer">
+<div class="hfg_footer">
+<div class="footer--row footer-bottom layout-full-contained" id="cb-row--footer-bottom" data-row-id="bottom" data-show-on="desktop">
+<div class="footer--row-inner footer-bottom-inner footer-content-wrap">
+<div class="container">
+<div class="hfg-grid nv-footer-content hfg-grid-bottom row--wrapper row " data-section="hfg_footer_layout_bottom">
+<div class="hfg-slot left"><div class="builder-item"><div class="item--inner"><div class="component-wrap"><div><p><a href="https://themeisle.com/themes/neve/" rel="nofollow">Neve</a> | Movido a <a href="http://wordpress.org/" rel="nofollow">WordPress</a></p></div></div></div></div></div>
+<div class="hfg-slot c-left"></div>
+<div class="hfg-slot center"></div> </div>
 </div>
 </div>
 </div>
 </div>
 </footer>
 </div>
-<div id="ast-scroll-top" tabindex="0" class="ast-scroll-top-icon ast-scroll-to-top-right" data-on-devices="both">
-<span class="ast-icon icon-arrow"><svg class="ast-arrow-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="26px" height="16.043px" viewbox="57 35.171 26 16.043" enable-background="new 57 35.171 26 16.043" xml:space="preserve">
-<path d="M57.5,38.193l12.5,12.5l12.5-12.5l-2.5-2.5l-10,10l-10-10L57.5,38.193z"></path>
-</svg></span> <span class="screen-reader-text">Rolar para cima</span>
-</div>
-<script id="astra-theme-js-js-extra">var astra = {"break_point":"921","isRtl":"","is_scroll_to_id":"1","is_scroll_to_top":"1","is_header_footer_builder_active":"1"};</script>
-<script src="https://eternallegend.github.io/wp-content/themes/astra/assets/js/minified/frontend.min.js?ver=4.4.0" id="astra-theme-js-js"></script>
-<script>/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);</script>
+<script data-cfasync="false" src="https://eternallegend.github.io/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" id="neve-script-js-extra">
+/* <![CDATA[ */
+var NeveProperties = {"ajaxurl":"https:\/\/eternallegend.github.io\/wp-admin\/admin-ajax.php","nonce":"baf8a9f227","isRTL":"","isCustomize":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://eternallegend.github.io/wp-content/themes/neve/assets/js/build/modern/frontend.js?ver=3.7.3" id="neve-script-js" async></script>
+<script id="neve-script-js-after" type="text/javascript">
+	var html = document.documentElement;
+	var theme = html.getAttribute('data-neve-theme') || 'light';
+	var variants = {"logo":{"light":{"src":false,"srcset":false,"sizes":false},"dark":{"src":false,"srcset":false,"sizes":false},"same":true}};
+
+	function setCurrentTheme( theme ) {
+		var pictures = document.getElementsByClassName( 'neve-site-logo' );
+		for(var i = 0; i<pictures.length; i++) {
+			var picture = pictures.item(i);
+			if( ! picture ) {
+				continue;
+			};
+			var fileExt = picture.src.slice((Math.max(0, picture.src.lastIndexOf(".")) || Infinity) + 1);
+			if ( fileExt === 'svg' ) {
+				picture.removeAttribute('width');
+				picture.removeAttribute('height');
+				picture.style = 'width: var(--maxwidth)';
+			}
+			var compId = picture.getAttribute('data-variant');
+			if ( compId && variants[compId] ) {
+				var isConditional = variants[compId]['same'];
+				if ( theme === 'light' || isConditional || variants[compId]['dark']['src'] === false ) {
+					picture.src = variants[compId]['light']['src'];
+					picture.srcset = variants[compId]['light']['srcset'] || '';
+					picture.sizes = variants[compId]['light']['sizes'];
+					continue;
+				};
+				picture.src = variants[compId]['dark']['src'];
+				picture.srcset = variants[compId]['dark']['srcset'] || '';
+				picture.sizes = variants[compId]['dark']['sizes'];
+			};
+		};
+	};
+
+	var observer = new MutationObserver(function(mutations) {
+		mutations.forEach(function(mutation) {
+			if (mutation.type == 'attributes') {
+				theme = html.getAttribute('data-neve-theme');
+				setCurrentTheme(theme);
+			};
+		});
+	});
+
+	observer.observe(html, {
+		attributes: true
+	});
+function toggleAriaClick() { function toggleAriaExpanded(toggle = 'true') { document.querySelectorAll('button.navbar-toggle').forEach(function(el) { if ( el.classList.contains('caret-wrap') ) { return; } el.setAttribute('aria-expanded', 'true' === el.getAttribute('aria-expanded') ? 'false' : toggle); }); } toggleAriaExpanded(); if ( document.body.hasAttribute('data-ftrap-listener') ) { return; } document.body.setAttribute('data-ftrap-listener', 'true'); document.addEventListener('ftrap-end', function() { toggleAriaExpanded('false'); }); }
+</script>
 </body>
 </html>
