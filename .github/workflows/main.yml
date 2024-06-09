@@ -9,6 +9,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: .github/workflows
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
@@ -16,7 +20,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.11'  # Escolha a versão do Python compatível com seu projeto
+          python-version: '3.x'  # Escolha a versão do Python compatível com seu projeto
 
       - name: Install Dependencies
         run: |
@@ -27,4 +31,4 @@ jobs:
         run: |
           python api.py &  # Inicia o servidor Flask em segundo plano
           sleep 5  # Aguarda 5 segundos para o servidor iniciar
-          curl http://localhost:5000  # Simula uma requisição ao servidor para verificar se está funcionando
+          curl http://127.0.0.1:5000  # Simula uma requisição ao servidor para verificar se está funcionando
