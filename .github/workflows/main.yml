@@ -19,13 +19,14 @@ jobs:
           python-version: '3.11'  # Escolha a versão do Python compatível com seu projeto
 
       - name: Install Dependencies
+        working-directory: descritor
         run: |
           python -m pip install --upgrade pip
-          pip install -r descritor/requirements.txt
+          pip install -r requirements.txt
 
       - name: Run Flask Server
+        working-directory: descritor
         run: |
-          cd descritor
           python api.py &  # Inicia o servidor Flask em segundo plano
           sleep 5  # Aguarda 5 segundos para o servidor iniciar
           curl http://127.0.0.1:5000  # Simula uma requisição ao servidor para verificar se está funcionando
