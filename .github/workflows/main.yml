@@ -3,11 +3,12 @@ name: Continuous Deployment
 on:
   push:
     branches:
-      - main  # ou o nome da sua branch principal
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 9999  # Define o tempo máximo de execução
 
     steps:
       - name: Checkout Repository
@@ -16,7 +17,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.x'  # Escolha a versão do Python compatível com seu projeto
+          python-version: '3.x'
 
       - name: Install Dependencies
         run: |
@@ -26,6 +27,5 @@ jobs:
       - name: Run Flask Server
         run: |
           cd descritor
-          python api.py &  # Inicia o servidor Flask em segundo plano
-          sleep 5  # Aguarda 5 segundos para o servidor iniciar
-          curl http://127.0.0.1:5000  # Simula uma requisição ao servidor para verificar se está funcionando
+          nohup python api.py &  # Inicia o servidor Flask em segundo plano
+          while true; do sleep 500h; echo "Reconnecting..."; done  # Mantém o trabalho em execução
