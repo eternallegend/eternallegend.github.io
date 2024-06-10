@@ -4,7 +4,7 @@ import base64
 import requests
 
 app = Flask(__name__)
-CORS(app)  # Adiciona suporte CORS
+CORS(app, resources={r"/*": {"origins": "*"}})  # Adiciona suporte CORS
 
 VISIONBOT_API_BASE_URL = "https://visionbot.ru/apiv2"
 
