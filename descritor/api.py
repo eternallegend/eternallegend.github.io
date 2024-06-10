@@ -86,4 +86,4 @@ def index():
     return redirect(INDEX_HTML_URL)
 
 if __name__ == '__main__':
-    app.run(host='149.56.155.140', port=1500, debug=False)
+    app.run(host='0.0.0.0', port=5000, debug=False)

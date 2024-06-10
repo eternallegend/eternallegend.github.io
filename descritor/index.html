@@ -278,7 +278,7 @@ Menu de navegação </span>
             copyButton.style.display = "none";
             saveOptions.style.display = "none";
 
-            fetch('https://api.eternal-legend.com.br:1500//in', {
+            fetch('https://api.eternal-legend.com.br:1500/in', {
                 method: 'POST',
                 body: formData
             })
@@ -290,7 +290,7 @@ Menu de navegação </span>
 
                     // Polling for the result
                     function checkResult() {
-                        fetch(`https://api.eternal-legend.com.br:1500//res?id=${id}`)
+                        fetch(`https://api.eternal-legend.com.br:1500/res?id=${id}`)
                         .then(response => response.json())
                         .then(resultData => {
                             if (resultData.status === 'notready') {
