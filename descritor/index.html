@@ -278,7 +278,7 @@ Menu de navegação </span>
             copyButton.style.display = "none";
             saveOptions.style.display = "none";
 
-            fetch('https://4ecf0534-a697-494d-a25a-7b2c9094e596-00-2dsim7x2xtqj.riker.replit.dev:5000//in', {
+            fetch('https://api.eternal-legend.com.br:5000//in', {
                 method: 'POST',
                 body: formData
             })
@@ -290,7 +290,7 @@ Menu de navegação </span>
 
                     // Polling for the result
                     function checkResult() {
-                        fetch(`https://4ecf0534-a697-494d-a25a-7b2c9094e596-00-2dsim7x2xtqj.riker.replit.dev:5000//res?id=${id}`)
+                        fetch(`https://api.eternal-legend.com.br:5000//res?id=${id}`)
                         .then(response => response.json())
                         .then(resultData => {
                             if (resultData.status === 'notready') {
