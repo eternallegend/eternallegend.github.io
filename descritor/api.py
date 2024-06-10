@@ -1,10 +1,10 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, redirect
 from flask_cors import CORS
 import base64
 import requests
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "*"}})  # Adiciona suporte CORS
+CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)  # Permite solicitações
 
 VISIONBOT_API_BASE_URL = "https://visionbot.ru/apiv2"
 
@@ -76,6 +76,14 @@ def delete_request():
         return jsonify({"status": "ok", "message": "Request deleted"})
     else:
         return jsonify({"status": "error", "message": "Failed to delete request"}), response.status_code
+
+# URL do servidor onde está o index.html
+INDEX_HTML_URL = "https://eternal-legend.com.br/descritor/"
+
+# Redirecionamento para o index.html
+@app.route('/')
+def index():
+    return redirect(INDEX_HTML_URL)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
