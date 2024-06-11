@@ -88,7 +88,7 @@
             copyButton.style.display = "none";
             saveOptions.style.display = "none";
 
-            fetch('https://cloud.eternal-legend.com.br/in', {
+            fetch('http://127.0.0.1:5000/in', {
                 method: 'POST',
                 body: formData
             })
@@ -100,7 +100,7 @@
 
                     // Polling for the result
                     function checkResult() {
-                        fetch(`https://cloud.eternal-legend.com.br/res?id=${id}`)
+                        fetch(`http://127.0.0.1:5000/res?id=${id}`)
                         .then(response => response.json())
                         .then(resultData => {
                             if (resultData.status === 'notready') {

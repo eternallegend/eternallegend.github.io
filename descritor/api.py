@@ -4,7 +4,7 @@ import base64
 import requests
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)  # Permite solicitações de qualquer origem
+CORS(app)  # Adiciona suporte CORS
 
 VISIONBOT_API_BASE_URL = "https://visionbot.ru/apiv2"
 
@@ -78,4 +78,4 @@ def delete_request():
         return jsonify({"status": "error", "message": "Failed to delete request"}), response.status_code
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=1500, debug=False)
+    app.run(debug=False)
