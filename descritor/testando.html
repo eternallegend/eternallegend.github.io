@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <title>Descritor de imagens para cegos, feito por eternal legend.</title>
-    <h1>descritor de imagens da eternal legend.</h1>
 </head>
 <body>
     <div class="nv-content-wrap entry-content">
@@ -16,13 +15,13 @@
     <form id="recognizeForm" enctype="multipart/form-data">
         <label for="file">Arquivo de Imagem:</label>
         <input type="file" id="file" name="file">
-
+<br>
         <label for="url">URL da Imagem:</label>
         <input type="text" id="url" name="url" placeholder="Insira a URL da imagem">
-
+<br>
         <label for="lang">Selecionar Idioma:</label>
         <select id="lang" name="lang"></select>
-
+<br>
         <label for="target">O que reconhecer:</label>
         <select id="target" name="target">
             <option value="all">Tudo</option>
@@ -30,7 +29,7 @@
             <option value="images">Apenas Imagens</option>
             <option value="nothing">Nada</option>
         </select>
-
+<br>
         <div class="checkbox">
             <input type="checkbox" id="qr" name="qr" value="1">
             <label for="qr">Ler códigos QR/BAR</label>
@@ -88,7 +87,7 @@
             copyButton.style.display = "none";
             saveOptions.style.display = "none";
 
-            fetch('http://66.179.253.10:3500/in', {
+            fetch('https://desc.eternal-legend.com.br//in', {
                 method: 'POST',
                 body: formData
             })
@@ -100,7 +99,7 @@
 
                     // Polling for the result
                     function checkResult() {
-                        fetch(`http://66.179.253.10:3500/res?id=${id}`)
+                        fetch(`https://desc.eternal-legend.com.br//res?id=${id}`)
                         .then(response => response.json())
                         .then(resultData => {
                             if (resultData.status === 'notready') {
