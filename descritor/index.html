@@ -8,173 +8,150 @@
 </head>
 <body>
     <div class="nv-content-wrap entry-content">
-<h1>descritor de imagens da eternal legend.</h1>
-</div>
-</div> 
-<div class="nv-content-wrap entry-content">
-    <form id="recognizeForm" enctype="multipart/form-data">
-        <label for="file">Arquivo de Imagem:</label>
-        <input type="file" id="file" name="file">
-<br>
-        <label for="url">URL da Imagem:</label>
-        <input type="text" id="url" name="url" placeholder="Insira a URL da imagem">
-<br>
-        <label for="lang">Selecionar Idioma:</label>
-        <select id="lang" name="lang"></select>
-<br>
-        <label for="target">O que reconhecer:</label>
-        <select id="target" name="target">
-            <option value="all">Tudo</option>
-            <option value="text">Apenas Texto</option>
-            <option value="images">Apenas Imagens</option>
-            <option value="nothing">Nada</option>
-        </select>
-<br>
-        <div class="checkbox">
-            <input type="checkbox" id="qr" name="qr" value="1">
-            <label for="qr">Ler códigos QR/BAR</label>
-        </div>
-
-        <div class="checkbox">
-            <input type="checkbox" id="bm" name="bm" value="1">
-            <label for="bm">Usar Be My AI</label>
-        </div>
-
-        <div class="checkbox">
-            <input type="checkbox" id="translate" name="translate" value="1">
-            <label for="translate">Traduzir texto reconhecido</label>
-        </div>
-
-        <input type="submit" value="Reconhecer Imagem">
-    </form>
-
-    <div id="result"></div>
-    <button id="copyButton" class="copy-button" style="display:none;">Copiar para a Área de Transferência</button>
-    <div id="saveOptions" style="display:none;">
-        <label for="saveFormat">Salvar como:</label>
-        <select id="saveFormat">
-            <option value="json">JSON</option>
-            <option value="txt">Texto (TXT)</option>
-        </select>
-        <button onclick="saveResult()">Salvar</button>
+        <h1>descritor de imagens da eternal legend.</h1>
     </div>
-
-    <script src="languages.js" defer></script>
-    <script>
-        const langSelect = document.getElementById('lang');
-
-        // Função para adicionar opções de idioma ao seletor de idioma
-        function addLanguageOptions() {
-            for (const code in languages) {
-                const option = document.createElement('option');
-                option.value = code;
-                option.textContent = languages[code];
-                langSelect.appendChild(option);
-            }
-        }
-
-        // Adiciona as opções de idioma quando a página carrega
-        window.onload = addLanguageOptions;
-
-        document.getElementById('recognizeForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const formData = new FormData(this);
+    <div class="nv-content-wrap entry-content">
+        <form id="recognizeForm" enctype="multipart/form-data">
+            <label for="file">Arquivo de Imagem:</label>
+            <input type="file" id="file" name="file">
+            <br>
+            <label for="url">URL da Imagem:</label>
+            <input type="text" id="url" name="url" placeholder="Insira a URL da imagem">
+            <br>
+            <label for="lang">Selecionar Idioma:</label>
+            <select id="lang" name="lang"></select>
+            <br>
+            <label for="target">O que reconhecer:</label>
+            <select id="target" name="target">
+                <option value="all">Tudo</option>
+                <option value="text">Apenas Texto</option>
+                <option value="images">Apenas Imagens</option>
+                <option value="nothing">Nada</option>
+            </select>
+            <br>
+            <div class="checkbox">
+                <input type="checkbox" id="qr" name="qr" value="1">
+                <label for="qr">Ler códigos QR/BAR</label>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" id="bm" name="bm" value="1">
+                <label for="bm">Usar Be My AI</label>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" id="translate" name="translate" value="1">
+                <label for="translate">Traduzir texto reconhecido</label>
+            </div>
+            <input type="submit" value="Reconhecer Imagem">
+        </form>
+        <div id="result"></div>
+        <button id="copyButton" class="copy-button" style="display:none;">Copiar para a Área de Transferência</button>
+        <div id="saveOptions" style="display:none;">
+            <label for="saveFormat">Salvar como:</label>
+            <select id="saveFormat">
+                <option value="json">JSON</option>
+                <option value="txt">Texto (TXT)</option>
+            </select>
+            <button onclick="saveResult()">Salvar</button>
+        </div>
+        <script src="api.js" defer></script>
+        <script>
+            const langSelect = document.getElementById('lang');
             const resultDiv = document.getElementById('result');
             const copyButton = document.getElementById('copyButton');
             const saveOptions = document.getElementById('saveOptions');
-            resultDiv.innerHTML = "Processando...";
-            copyButton.style.display = "none";
-            saveOptions.style.display = "none";
 
-            fetch('https://desc.eternal-legend.com.br/in', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 'ok') {
-                    const id = data.id;
+            // Adiciona as opções de idioma quando a página carrega
+            window.onload = async function() {
+                const languages = await getAvailableLanguages();
+                languages.forEach(lang => {
+                    const option = document.createElement('option');
+                    option.value = lang;
+                    option.textContent = lang;
+                    langSelect.appendChild(option);
+                });
+            };
+
+            document.getElementById('recognizeForm').addEventListener('submit', async function(event) {
+                event.preventDefault();
+
+                const formData = new FormData(this);
+                resultDiv.innerHTML = "Processando...";
+                copyButton.style.display = "none";
+                saveOptions.style.display = "none";
+
+                const recognitionResponse = await recognizeImage(formData);
+                if (recognitionResponse.status === 'ok') {
+                    const id = recognitionResponse.id;
                     resultDiv.innerHTML = "<div class='section-title'>Aguardando Reconhecimento...</div>";
 
                     // Polling for the result
-                    function checkResult() {
-                        fetch(`https://desc.eternal-legend.com.br/res?id=${id}`)
-                        .then(response => response.json())
-                        .then(resultData => {
-                            if (resultData.status === 'notready') {
-                                setTimeout(checkResult, 2000);
-                            } else if (resultData.status === 'ok') {
-                                let resultHtml = `<div class="section-title">Texto Reconhecido:</div><p>${resultData.text}</p>`;
-                                resultDiv.innerHTML = resultHtml;
-                                copyButton.style.display = "block";
-                                saveOptions.style.display = "block";
-                            } else {
-                                resultDiv.innerHTML = "Erro ao processar a imagem.";
-                            }
-                        });
+                    async function checkResult() {
+                        const resultData = await getResult(id);
+                        if (resultData.status === 'notready') {
+                            setTimeout(checkResult, 2000);
+                        } else if (resultData.status === 'ok') {
+                            let resultHtml = `<div class="section-title">Texto Reconhecido:</div><p>${resultData.text}</p>`;
+                            resultDiv.innerHTML = resultHtml;
+                            copyButton.style.display = "block";
+                            saveOptions.style.display = "block";
+                        } else {
+                            resultDiv.innerHTML = "Erro ao processar a imagem.";
+                        }
                     }
 
                     checkResult();
                 } else {
                     resultDiv.innerHTML = "Erro ao iniciar o reconhecimento.";
                 }
-            })
-            .catch(error => {
-                console.error('Erro:', error);
-                resultDiv.innerHTML = "Erro ao enviar a solicitação.";
             });
-        });
 
-        // Função para copiar o resultado para a área de transferência
-        document.getElementById('copyButton').addEventListener('click', function() {
-            const resultText = document.getElementById('result').innerText;
-            navigator.clipboard.writeText(resultText)
-                .then(() => alert("Texto copiado com sucesso!"))
-                .catch(err => console.error('Erro ao copiar texto: ', err));
-        });
+            // Função para copiar o resultado para a área de transferência
+            document.getElementById('copyButton').addEventListener('click', function() {
+                const resultText = document.getElementById('result').innerText;
+                navigator.clipboard.writeText(resultText)
+                    .then(() => alert("Texto copiado com sucesso!"))
+                    .catch(err => console.error('Erro ao copiar texto: ', err));
+            });
 
-        // Função para salvar o resultado conforme a opção selecionada
-        function saveResult() {
-            const saveFormat = document.getElementById('saveFormat').value;
-            switch (saveFormat) {
-                case 'json':
-                    saveAsJson();
-                    break;
-                case 'txt':
-                    saveAsTxt();
-                    break;
-                default:
-                    break;
+            // Função para salvar o resultado conforme a opção selecionada
+            function saveResult() {
+                const saveFormat = document.getElementById('saveFormat').value;
+                switch (saveFormat) {
+                    case 'json':
+                        saveAsJson();
+                        break;
+                    case 'txt':
+                        saveAsTxt();
+                        break;
+                    default:
+                        break;
+                }
             }
-        }
 
-        // Função para salvar como JSON
-        function saveAsJson() {
-            const resultJson = { text: document.getElementById('result').innerText };
-            const blob = new Blob([JSON.stringify(resultJson)], { type: 'application/json' });
-            saveAs(blob, 'resultado.json');
-        }
+            // Função para salvar como JSON
+            function saveAsJson() {
+                const resultJson = { text: document.getElementById('result').innerText };
+                const blob = new Blob([JSON.stringify(resultJson)], { type: 'application/json' });
+                saveAs(blob, 'resultado.json');
+            }
 
-        // Função para salvar como arquivo de texto (.txt)
-        function saveAsTxt() {
-            const resultText = document.getElementById('result').innerText;
-            const blob = new Blob([resultText], { type: 'text/plain' });
-saveAs(blob, 'resultado.txt');
-}
-    // Função para salvar arquivos
-    function saveAs(blob, filename) {
-        const link = document.createElement('a');
-        link.href = window.URL.createObjectURL(blob);
-        link.download = filename;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    }
-</script>
-</div> </div>
-</div>
-</div>
-</main>
+            // Função para salvar como arquivo de texto (.txt)
+            function saveAsTxt() {
+                const resultText = document.getElementById('result').innerText;
+                const blob = new Blob([resultText], { type: 'text/plain' });
+                saveAs(blob, 'resultado.txt');
+            }
+
+            // Função para salvar arquivos
+            function saveAs(blob, filename) {
+                const link = document.createElement('a');
+                link.href = window.URL.createObjectURL(blob);
+                link.download = filename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        </script>
+    </div>
 </body>
 </html>
