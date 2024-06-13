@@ -2,9 +2,18 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import base64
 import requests
+from flask_cors import CORS,cross_origin
+app=Flask(__name__)
+CORS(app, support_credentials=True)
+@app.route('/api/test', methods=['POST', 'GET','OPTIONS'])
+@cross_origin(supports_credentials=True)
+def index():
+    if(request.method=='POST'):
+     some_json=request.get_json()
+     return jsonify({"key":some_json})
+    else:
+        return jsonify({"GET":"GET"})
 
-app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "https://eternal-legend.com.br"}})
 
 VISIONBOT_API_BASE_URL = "https://visionbot.ru/apiv2"
 
@@ -78,4 +87,4 @@ def delete_request():
         return jsonify({"status": "error", "message": "Failed to delete request"}), response.status_code
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='127.0.0.1', port=3500)
