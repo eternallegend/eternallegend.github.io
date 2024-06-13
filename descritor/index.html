@@ -91,6 +91,9 @@
                             setTimeout(checkResult, 2000);
                         } else if (resultData.status === 'ok') {
                             let resultHtml = `<div class="section-title">Texto Reconhecido:</div><p>${resultData.text}</p>`;
+                            if (resultData.qr) {
+                                resultHtml += `<div class="section-title">Código QR/BAR:</div><p>${resultData.qr}</p>`;
+                            }
                             resultDiv.innerHTML = resultHtml;
                             copyButton.style.display = "block";
                             saveOptions.style.display = "block";
