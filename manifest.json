@@ -1,0 +1,16 @@
+{
+  "background_color": "#ffffff",
+  "dir": "auto",
+  "display": "fullscreen",
+  "name": "eternal legend",
+  "orientation": "portrait",
+  "scope": "/",
+  "short_name": "eternal legend",
+  "start_url": "https://eternal-legend.com.br",
+  "theme_color": "#ffffff",
+  "description": "Eternal legend, comunidade de jogos para cegos e deficientes visuais!",
+  "lang": "pt",
+  "categories": [
+    "games"
+  ]
+}

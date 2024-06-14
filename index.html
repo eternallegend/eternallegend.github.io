@@ -15,6 +15,11 @@
 </head>
 </div></div>
 <body>
+<script>
+  if (typeof navigator.serviceWorker !== 'undefined') {
+    navigator.serviceWorker.register('sw.js')
+  }
+</script>
 <h1> Menu do site </h1>
 <nav>
     <ul>
