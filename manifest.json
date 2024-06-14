@@ -10,7 +10,29 @@
   "theme_color": "#ffffff",
   "description": "Eternal legend, comunidade de jogos para cegos e deficientes visuais!",
   "lang": "pt",
+  "id": "ETL",
+  "prefer_related_applications": false,
   "categories": [
     "games"
+  ],
+  "shortcuts": [
+    {
+      "name": "Portal de jogos para cegos",
+      "url": "https://eternal-legend.com.br/portal-de-jogos-para-cegos",
+      "description": "Veja os jogos disponíveis no portal de jogos para cegos!"
+    }
+  ],
+  "edge_side_panel": {
+    "preferred_width": 7
+  },
+  "share_target": {
+    "method": "GET"
+  },
+  "icons": [
+    {
+      "src": "/eternal.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
   ]
 }
