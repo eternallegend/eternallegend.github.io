@@ -43,6 +43,47 @@
   "url": "https://eternal-legend.com.br"
 }
  </script>
+<script>
+        // Função para redirecionar o navegador para a URL correspondente
+        function navigateTo(url) {
+            window.location.href = url;
+        }
+
+        // Event listener para capturar as teclas pressionadas
+        document.addEventListener('keydown', function(event) {
+            // Verifica se a tecla Alt está pressionada junto com um número
+            if (event.altKey) {
+                switch (event.key) {
+                    case '1':
+                        navigateTo('https://eternal-legend.com.br/');
+                        break;
+                    case '2':
+                        navigateTo('https://eternal-legend.com.br/envie-um-jogo-para-a-lista-de-jogos-de-android');
+                        break;
+                    case '3':
+                        navigateTo('https://eternal-legend.com.br/faca-uma-doacao-para-nos');
+                        break;
+                    case '4':
+                        navigateTo('https://eternal-legend.com.br/nossos-contatos-e-redes-sociais');
+                        break;
+                    case '5':
+                        navigateTo('https://eternal-legend.com.br/nossos-parceiros');
+                        break;
+                    case '6':
+                        navigateTo('https://eternal-legend.com.br/perguntas-frequentes');
+                        break;
+                    case '7':
+                        navigateTo('https://eternal-legend.com.br/portal-de-jogos-para-cegos');
+                        break;
+                    case '8':
+                        navigateTo('https://eternal-legend.com.br/sobre-o-nosso-aplicativo-e-o-nosso-site');
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
+    </script>
 </head>
 <body>
     <a class="brand" href="https://eternal-legend.com.br/" title="← Comunidade de jogos para cegos, jogos acessíveis para cegos. eternal legend" aria-label="Comunidade de jogos para cegos, jogos acessíveis para cegos. eternal legend Jogos para cegos na palma da sua mão!" rel="home">
