@@ -17,23 +17,36 @@ function createMenu() {
     title.textContent = 'Menu do site';
     document.body.appendChild(title);
 
-    // Cria o elemento de navegação
-    const nav = document.createElement('nav');
-    const ul = document.createElement('ul');
+    // Cria o elemento dropdown
+    const dropdown = document.createElement('select');
+    dropdown.id = 'menuDropdown';
 
-    // Para cada item no array de menuItems, cria um link de navegação
+    // Cria a opção padrão
+    const defaultOption = document.createElement('option');
+    defaultOption.value = '';
+    defaultOption.disabled = true;
+    defaultOption.selected = true;
+    defaultOption.textContent = 'Selecione uma opção';
+    dropdown.appendChild(defaultOption);
+
+    // Para cada item no array de menuItems, cria uma opção no dropdown
     menuItems.forEach(item => {
-        const li = document.createElement('li');
-        const a = document.createElement('a');
-        a.textContent = item.label;
-        a.href = item.url;
-        li.appendChild(a);
-        ul.appendChild(li);
+        const option = document.createElement('option');
+        option.value = item.url;
+        option.textContent = item.label;
+        dropdown.appendChild(option);
     });
 
-    // Adiciona o menu à página
-    nav.appendChild(ul);
-    document.body.appendChild(nav);
+    // Adiciona o dropdown à página
+    document.body.appendChild(dropdown);
+
+    // Adiciona um listener de mudança para navegar para a URL correspondente
+    dropdown.addEventListener('change', function() {
+        const selectedUrl = this.value;
+        if (selectedUrl) {
+            window.location.href = selectedUrl;
+        }
+    });
 }
 
 // Função para redirecionar o navegador para a URL correspondente
