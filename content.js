@@ -270,6 +270,8 @@ document.addEventListener('keydown', function(event) {
 // Chama a função para criar e renderizar o menu ao carregar a página
 createMenu();
 
+document.body.appendChild(document.createElement('br'));
+
 // Download app button
 let downloadLink = document.createElement('a');
 downloadLink.href = "https://play.google.com/store/apps/details?id=com.eternal.legend&hl=pt&gl=US";
