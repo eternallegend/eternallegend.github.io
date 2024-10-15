@@ -188,6 +188,14 @@ skipToContentLink.className = "skip-to-content";
 skipToContentLink.textContent = "Pular para o conteúdo principal";
 document.body.appendChild(skipToContentLink);
 
+let menuScript = document.createElement('script');
+menuScript.src = 'menu.js';
+menuScript.onload = function() {
+    console.log('menu.js has been loaded successfully');
+};
+document.head.appendChild(menuScript);
+
+
 // Main Content
 let mainContent = document.createElement('div');
 mainContent.id = "main-content";
@@ -197,15 +205,6 @@ mainHeading.textContent = "Comunidade de jogos para cegos, jogos acessíveis par
 mainContent.appendChild(mainHeading);
 
 document.body.appendChild(mainContent);
-
-let menuScript = document.createElement('script');
-menuScript.src = 'menu.js';
-menuScript.onload = function() {
-    console.log('menu.js has been loaded successfully');
-};
-document.head.appendChild(menuScript);
-
-
 // Download app button
 let downloadLink = document.createElement('a');
 downloadLink.href = "https://play.google.com/store/apps/details?id=com.eternal.legend&hl=pt&gl=US";
