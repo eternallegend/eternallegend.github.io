@@ -191,11 +191,6 @@ document.body.appendChild(skipToContentLink);
 let mainContent = document.createElement('div');
 mainContent.id = "main-content";
 
-let mainImage = document.createElement('img');
-mainImage.src = "https://eternal-legend.com.br/eternal.jpg";
-mainImage.alt = "A imagem é um logotipo com um dragão preto feroz na frente de um círculo vermelho, simbolizando o sol. O dragão, com uma longa cauda curva, está emoldurado por chamas laranja que saem de duas espadas cruzadas. O texto 'Eternal Legend' em vermelho estilizado atravessa o meio da imagem. O fundo é branco com formas cinza parecidas com nuvens atrás do dragão e do texto.";
-mainContent.appendChild(mainImage);
-
 let mainHeading = document.createElement('h1');
 mainHeading.textContent = "Comunidade de jogos para cegos, jogos acessíveis para cegos. eternal legend";
 mainContent.appendChild(mainHeading);
