@@ -194,11 +194,6 @@ document.body.appendChild(skipToContentLink);
 let mainContent = document.createElement('div');
 mainContent.id = "main-content";
 
-let mainHeading = document.createElement('h1');
-mainHeading.textContent = "Comunidade de jogos para cegos, jogos acessíveis para cegos. eternal legend";
-mainContent.appendChild(mainHeading);
-
-document.body.appendChild(mainContent);
 let menuScript = document.createElement('script');
 menuScript.src = 'menu.js';
 menuScript.onload = function() {
@@ -206,6 +201,12 @@ menuScript.onload = function() {
 };
 document.head.appendChild(menuScript);
 
+
+let mainHeading = document.createElement('h1');
+mainHeading.textContent = "Comunidade de jogos para cegos, jogos acessíveis para cegos. eternal legend";
+mainContent.appendChild(mainHeading);
+
+document.body.appendChild(mainContent);
 
 // Download app button
 let downloadLink = document.createElement('a');
