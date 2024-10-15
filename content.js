@@ -175,13 +175,6 @@ titleWrap.appendChild(smallText);
 brandLink.appendChild(titleWrap);
 document.body.appendChild(brandLink);
 
-let menuScript = document.createElement('script');
-menuScript.src = 'menu.js';
-menuScript.onload = function() {
-    console.log('menu.js has been loaded successfully');
-};
-document.head.appendChild(menuScript);
-
 
 // Service Worker registration
 if (typeof navigator.serviceWorker !== 'undefined') {
@@ -195,6 +188,13 @@ skipToContentLink.href = "#main-content";
 skipToContentLink.className = "skip-to-content";
 skipToContentLink.textContent = "Pular para o conteúdo principal";
 document.body.appendChild(skipToContentLink);
+
+let menuScript = document.createElement('script');
+menuScript.src = 'menu.js';
+menuScript.onload = function() {
+    console.log('menu.js has been loaded successfully');
+};
+document.head.appendChild(menuScript);
 
 
 // Main Content
