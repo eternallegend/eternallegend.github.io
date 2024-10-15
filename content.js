@@ -194,13 +194,6 @@ document.body.appendChild(skipToContentLink);
 let mainContent = document.createElement('div');
 mainContent.id = "main-content";
 
-let menuScript = document.createElement('script');
-menuScript.src = 'menu.js';
-menuScript.onload = function() {
-    console.log('menu.js has been loaded successfully');
-};
-document.head.appendChild(menuScript);
-
 
 let mainHeading = document.createElement('h1');
 mainHeading.textContent = "Comunidade de jogos para cegos, jogos acessíveis para cegos. eternal legend";
@@ -215,6 +208,13 @@ downloadLink.textContent = "Baixe o nosso aplicativo para android!";
 document.body.appendChild(downloadLink);
 
 document.body.appendChild(document.createElement('br'));
+let menuScript = document.createElement('script');
+menuScript.src = 'menu.js';
+menuScript.onload = function() {
+    console.log('menu.js has been loaded successfully');
+};
+document.head.appendChild(menuScript);
+
 
 // VLibras Plugin
 let vlibrasDiv = document.createElement('div');
