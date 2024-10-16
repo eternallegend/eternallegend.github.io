@@ -189,6 +189,33 @@ skipToContentLink.className = "skip-to-content";
 skipToContentLink.textContent = "Pular para o conteúdo principal";
 document.body.appendChild(skipToContentLink);
 
+(function() {
+  // Cria um cabeçalho para selecionar o idioma
+  var header = document.createElement('h3');
+  header.innerText = 'Select your language:';
+  document.body.insertBefore(header, document.body.firstChild);
+
+  // Cria o div do Google Translate
+  var translateDiv = document.createElement('div');
+  translateDiv.id = 'google_translate_element';
+  document.body.insertBefore(translateDiv, header.nextSibling);
+
+  // Adiciona o script do Google Translate
+  var translateScript = document.createElement('script');
+  translateScript.type = 'text/javascript';
+  translateScript.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+  document.body.appendChild(translateScript);
+
+  // Função de inicialização do Google Translate
+  window.googleTranslateElementInit = function() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'pt',
+      autoDisplay: true,
+      includedLanguages: '', // Você pode adicionar línguas específicas se necessário
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  };
+})();
 
 // Main Content
 let mainContent = document.createElement('div');
