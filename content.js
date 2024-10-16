@@ -189,12 +189,6 @@ skipToContentLink.className = "skip-to-content";
 skipToContentLink.textContent = "Pular para o conteúdo principal";
 document.body.appendChild(skipToContentLink);
 
-(function() {
-  // Cria um cabeçalho para selecionar o idioma
-  var header = document.createElement('h3');
-  header.innerText = 'Select your language:';
-  document.body.insertBefore(header, document.body.firstChild);
-
   // Cria o div do Google Translate
   var translateDiv = document.createElement('div');
   translateDiv.id = 'google_translate_element';
@@ -212,7 +206,6 @@ document.body.appendChild(skipToContentLink);
       pageLanguage: 'pt',
       autoDisplay: true,
       includedLanguages: '', // Você pode adicionar línguas específicas se necessário
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
     }, 'google_translate_element');
   };
 })();
