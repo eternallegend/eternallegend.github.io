@@ -215,7 +215,8 @@ document.body.appendChild(mainContent);
   window.googleTranslateElementInit = function() {
     new google.translate.TranslateElement({
       pageLanguage: 'pt',
-      autoDisplay: true // Parâmetro para mostrar automaticamente a tradução se detectado
+      autoDisplay: true, // Parâmetro para mostrar automaticamente a tradução se detectado
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
     }, 'google_translate_element');
   };
 })();
