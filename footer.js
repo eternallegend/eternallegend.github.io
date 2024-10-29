@@ -52,7 +52,7 @@ footer.appendChild(iframe);
 
 // Add credits text
 let creditsText = document.createElement('p');
-creditsText.innerHTML = '<mark> site construído por (Juan) sobe a palavra autorizada de (Adriano), David bruno e tefi. </mark>';
+creditsText.innerHTML = '<mark> site construído por (Juan) sobe a palavra autorizada de (Adriano), bruno e tefi. </mark>';
 footer.appendChild(creditsText);
 
 // Create site tagline and copyright information
