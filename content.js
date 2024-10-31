@@ -232,7 +232,7 @@ const menuItems = [
     { key: '7', label: 'ALT+7, Perguntas Frequentes', url: 'https://eternal-legend.com.br/perguntas-frequentes' },
     { key: '8', label: 'ALT+8, Portal de Jogos para Cegos', url: 'https://eternal-legend.com.br/portal-de-jogos-para-cegos' },
     { key: '9', label: 'ALT+9, Sobre o Nosso Aplicativo e o Nosso Site', url: 'https://eternal-legend.com.br/sobre-o-nosso-aplicativo-e-o-nosso-site' }
-    { key: '0', label: 'ALT+0, Nossas entrevistas', url: 'https://eternal-legend.com.br/nossas-entrevistas' },
+     key: '0', label: 'ALT+0, Nossas entrevistas', url: 'https://eternal-legend.com.br/nossas-entrevistas' },
 ];
 
 
