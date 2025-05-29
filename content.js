@@ -225,7 +225,7 @@ document.body.appendChild(mainContent);
 const menuItems = [
     { key: '1', label: 'ALT+1, Página inicial', url: 'https://eternal-legend.com.br/' },
     { key: '2', label: 'ALT+2, Downloads', url: 'https://eternal-legend.com.br/downloads' },
-    { key: '3', label: 'ALT+3, Enviar um Jogo para a Lista de Jogos de Android', url: 'https://eternal-legend.com.br/envie-um-jogo-para-a-lista-de-jogos-de-android' },
+    { key: '3', label: 'ALT+3, Enviar um Jogo para o novo portal!', url: 'https://portal.eternal-legend.com.br/' },
     { key: '4', label: 'ALT+4, Faça uma Doação para Nós', url: 'https://eternal-legend.com.br/faca-uma-doacao-para-nos' },
     { key: '5', label: 'ALT+5, Nossos Contatos e Redes Sociais', url: 'https://eternal-legend.com.br/nossos-contatos-e-redes-sociais' },
     { key: '6', label: 'ALT+6, Nossos Parceiros', url: 'https://eternal-legend.com.br/nossos-parceiros' },
