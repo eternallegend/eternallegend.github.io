@@ -67,7 +67,8 @@
             color: #ffd700;
         }
 
-        .download-link {
+        .download-link,
+        .copy-btn {
             display: inline-block;
             margin-top: 10px;
             padding: 8px 14px;
@@ -76,8 +77,27 @@
             border-radius: 4px;
             text-decoration: none;
             font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+
+        code {
+            display: block;
+            background-color: #000;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            color: #00ffcc;
         }
     </style>
+
+    <script>
+        function copiarComando(id) {
+            const texto = document.getElementById(id).innerText;
+            navigator.clipboard.writeText(texto);
+            alert("Comando copiado para a área de transferência.");
+        }
+    </script>
 </head>
 
 <body>
@@ -102,26 +122,26 @@
 <section class="box">
     <h2>Plataformas disponíveis</h2>
 
+    <!-- WEB -->
+    <h3>Web</h3>
+    <p>Acesse diretamente pelo navegador.</p>
+    <a class="download-link" href="https://masterjf-solucoes.com.br">
+        Acessar versão web
+    </a>
+
     <!-- WINDOWS -->
     <h3>Windows</h3>
 
     <details>
         <summary>Instalador MSI (x64)</summary>
-        <p>
-            Versão recomendada para a maioria dos usuários.
-            Instala o Brasil Acessível no sistema de forma tradicional.
-        </p>
         <a class="download-link"
            href="https://eternal-legend.com.br/brasil-acessivel/brasil-acessivel.msi">
-            Baixar instalador MSI
+            Baixar instalador
         </a>
     </details>
 
     <details>
-        <summary>Versão portátil (sem instalação)</summary>
-        <p>
-            Ideal para uso em pendrive ou computadores sem permissão de instalação.
-        </p>
+        <summary>Versão portátil</summary>
         <a class="download-link"
            href="https://eternal-legend.com.br/brasil-acessivel/brasil-acessivel-p.exe">
             Baixar versão portátil
@@ -129,23 +149,28 @@
     </details>
 
     <details>
-        <summary>Winget</summary>
-        <p><strong>Comando:</strong> winget install azurejoga.brasilacessivel</p>
+        <summary>Instalação via Winget</summary>
+        <p>Gerenciador de pacotes oficial do Windows.</p>
+        <code id="cmd-winget">winget install azurejoga.brasilacessivel</code>
+        <button class="copy-btn" onclick="copiarComando('cmd-winget')">
+            Copiar comando
+        </button>
     </details>
 
     <details>
-        <summary>Chocolatey</summary>
-        <p><strong>Comando:</strong> choco install brasil-acessivel --version=1.0.0</p>
+        <summary>Instalação via Chocolatey</summary>
+        <p>Gerenciador de pacotes avançado.</p>
+        <code id="cmd-choco">choco install brasil-acessivel --version=1.0.0</code>
+        <button class="copy-btn" onclick="copiarComando('cmd-choco')">
+            Copiar comando
+        </button>
     </details>
 
     <!-- LINUX -->
     <h3>Linux</h3>
 
     <details>
-        <summary>AppImage (todas as distribuições)</summary>
-        <p>
-            Funciona na maioria das distribuições Linux sem instalação.
-        </p>
+        <summary>AppImage</summary>
         <a class="download-link"
            href="https://eternal-legend.com.br/brasil-acessivel/brasil-acessivel.AppImage">
             Baixar AppImage
@@ -154,9 +179,6 @@
 
     <details>
         <summary>Debian / Ubuntu (.deb)</summary>
-        <p>
-            Compatível com Debian, Ubuntu e derivados.
-        </p>
         <a class="download-link"
            href="https://eternal-legend.com.br/brasil-acessivel/brasil-acessivel.deb">
             Baixar .deb
@@ -164,11 +186,7 @@
     </details>
 
     <details>
-        <summary>RPM (Fedora, RHEL, CentOS, AlmaLinux, Rocky, openSUSE)</summary>
-        <p>
-            Pacote RPM compatível com distribuições baseadas em Red Hat
-            e openSUSE (via zypper).
-        </p>
+        <summary>RPM (Fedora, RHEL, AlmaLinux, Rocky, openSUSE)</summary>
         <a class="download-link"
            href="https://eternal-legend.com.br/brasil-acessivel/brasil-acessivel.rpm">
             Baixar .rpm
@@ -177,9 +195,6 @@
 
     <details>
         <summary>Binário Linux</summary>
-        <p>
-            Execução direta sem gerenciador de pacotes.
-        </p>
         <a class="download-link"
            href="https://eternal-legend.com.br/brasil-acessivel/brasil-acessivel-binary">
             Baixar binário
@@ -194,11 +209,17 @@
     </a>
 
     <!-- IPHONE -->
-    <h3>iPhone (iOS)</h3>
+    <h3>iPhone (iOS – PWA)</h3>
+    <p>
+        No iPhone, o Brasil Acessível funciona como um
+        <strong>PWA (Progressive Web App)</strong>,
+        permitindo uso como aplicativo, mesmo fora da App Store.
+    </p>
     <ol>
-        <li>Acesse o site no Safari</li>
-        <li>Toque em Compartilhar</li>
-        <li>Selecione “Adicionar à Tela de Início”</li>
+        <li>Acesse <a href="https://masterjf-solucoes.com.br">o site</a> no navegador do iPhone</li>
+        <li>Toque em <strong>Compartilhar</strong></li>
+        <li>Selecione <strong>Adicionar à Tela de Início</strong></li>
+        <li>O app será instalado como um aplicativo normal</li>
     </ol>
 
     <!-- MAC -->
@@ -210,30 +231,16 @@
 <section class="box">
     <h2>Tutoriais</h2>
     <ul>
-        <li><a href="https://youtu.be/XpObApEZjeM">Tutorial – iPhone</a></li>
+        <li><a href="https://youtu.be/XpObApEZjeM">Tutorial – iPhone (PWA)</a></li>
         <li><a href="https://youtu.be/Sui7XswJqYk">Tutorial – Android</a></li>
     </ul>
 </section>
 
 <section class="box">
     <h2>Contato e comunidade</h2>
-
-    <p>
-        E-mail:
-        <a href="mailto:fjhonata14@gmail.com">fjhonata14@gmail.com</a>
-    </p>
-
-    <p>
-        <a href="https://chat.whatsapp.com/FkkgzDd0i73FcS8rWZbFGh">
-            Entrar no grupo do WhatsApp
-        </a>
-    </p>
-
-    <p>
-        <a href="https://whatsapp.com/channel/0029VbCO90GDjiOksJKXNs0b">
-            Seguir o canal do WhatsApp
-        </a>
-    </p>
+    <p>Email: <a href="mailto:fjhonata14@gmail.com">fjhonata14@gmail.com</a></p>
+    <p><a href="https://chat.whatsapp.com/FkkgzDd0i73FcS8rWZbFGh">Grupo do WhatsApp</a></p>
+    <p><a href="https://whatsapp.com/channel/0029VbCO90GDjiOksJKXNs0b">Canal do WhatsApp</a></p>
 </section>
 
 </main>
