@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Brasil Acessível – Filmes, Séries, Novelas e Livros com Audiodescrição</title>
+    <title>Brasil Acessível – Plataforma Acessível de Filmes, Séries e Livros</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description" content="Brasil Acessível é uma plataforma gratuita com filmes, séries, novelas e livros com audiodescrição para pessoas cegas e com deficiência visual.">
@@ -43,14 +43,6 @@
             margin-bottom: 45px;
         }
 
-        ul, ol {
-            padding-left: 22px;
-        }
-
-        li {
-            margin-bottom: 8px;
-        }
-
         a {
             color: #00ffcc;
             text-decoration: underline;
@@ -62,185 +54,211 @@
             border-radius: 6px;
         }
 
-        .legal {
-            background-color: #06101a;
-            padding: 20px;
-            border-left: 4px solid #ffd700;
+        details {
+            margin-bottom: 15px;
+            background-color: #081521;
+            padding: 15px;
+            border-radius: 6px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        .download-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 14px;
+            background-color: #00ffcc;
+            color: #000;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
         }
     </style>
 </head>
 
 <body>
 
-<script src="/content.js"></script>
-
 <header>
-    <img src="brasilacessivel-logo.png"
-         alt="Logotipo do Brasil Acessível com ícone inspirado em cinema, áudio e Braille, nas cores da bandeira do Brasil, e o texto Brasil Acessível – Filmes, Séries, Livros e Novelas com Audiodescrição.">
+    <img src="brasilacessivel-logo.png" alt="Logotipo do Brasil Acessível">
 </header>
 
 <main>
 
-    <!-- APRESENTAÇÃO -->
-    <section>
-        <h1>Bem-vindo ao Brasil Acessível</h1>
+<section>
+    <h1>Brasil Acessível</h1>
+    <p>
+        Plataforma gratuita criada para garantir acesso à cultura,
+        entretenimento e informação para pessoas cegas e com deficiência visual,
+        por meio de conteúdos com audiodescrição e navegação acessível.
+    </p>
+</section>
+
+<section class="box">
+    <h2>Plataformas disponíveis</h2>
+
+    <!-- WINDOWS -->
+    <h3>Windows</h3>
+
+    <details>
+        <summary>Instalador MSI (x64)</summary>
         <p>
-            O Brasil Acessível é uma plataforma criada para garantir acesso à cultura,
-            ao entretenimento e à informação para pessoas cegas e com deficiência visual,
-            por meio de conteúdos com audiodescrição e navegação totalmente acessível.
+            Versão recomendada para a maioria dos usuários.
+            Instala o Brasil Acessível no sistema de forma tradicional.
         </p>
-    </section>
+        <a class="download-link"
+           href="https://eternal-legend.com.br/brasil-acessivel/brasil-acessivel.msi">
+            Baixar instalador MSI
+        </a>
+    </details>
 
-    <!-- CONTEÚDOS -->
-    <section class="box">
-        <h2>Conteúdos disponíveis</h2>
-        <ul>
-            <li><strong>Filmes</strong> – Mais de 1.700 títulos com audiodescrição</li>
-            <li><strong>Séries</strong> – Mais de 400 séries acessíveis</li>
-            <li><strong>Novelas</strong> – Conteúdos clássicos e atuais</li>
-            <li><strong>Livros</strong> – Livros e audiolivros acessíveis</li>
-        </ul>
-    </section>
-
-    <!-- RECURSOS -->
-    <section class="box">
-        <h2>Recursos da plataforma</h2>
-        <ul>
-            <li>Adicionar filmes, séries, novelas e livros aos <strong>Favoritos</strong></li>
-            <li><strong>Retomar automaticamente</strong> de onde você parou</li>
-            <li>Busca simples e acessível por título</li>
-            <li>Navegação otimizada para leitores de tela</li>
-            <li>Interface limpa, direta e sem excesso visual</li>
-            <li><strong>Fazer login</strong> para salvar preferências</li>
-            <li><strong>Criar conta</strong> de forma simples</li>
-            <li><strong>Entrar sem conta</strong> para acesso rápido</li>
-        </ul>
-    </section>
-
-    <!-- PLATAFORMAS -->
-    <section>
-        <h2>Plataformas e downloads</h2>
-
-        <h3>Android</h3>
+    <details>
+        <summary>Versão portátil (sem instalação)</summary>
         <p>
-            Aplicativo completo com suporte total a leitores de tela.
+            Ideal para uso em pendrive ou computadores sem permissão de instalação.
         </p>
+        <a class="download-link"
+           href="https://eternal-legend.com.br/brasil-acessivel/brasil-acessivel-portatil.exe">
+            Baixar versão portátil
+        </a>
+    </details>
+
+    <details>
+        <summary>Winget</summary>
         <p>
-            <a href="https://play.google.com/store/apps/details?id=masterjf.brasil.acessivel">
-                Baixar na Google Play
+            Instalação via gerenciador de pacotes do Windows.
+        </p>
+        <p><strong>Comando:</strong> winget install azurejoga.brasilacessivel</p>
+    </details>
+
+    <details>
+        <summary>Chocolatey</summary>
+        <p>
+            Instalação via Chocolatey.
+        </p>
+        <p><strong>Comando:</strong> choco install brasil-acessivel --version=1.0.0</p>
+    </details>
+
+    <!-- LINUX -->
+    <h3>Linux</h3>
+
+    <details>
+        <summary>AppImage</summary>
+        <p>
+            Funciona na maioria das distribuições Linux sem instalação.
+        </p>
+        <a class="download-link"
+           href="https://eternal-legend.com.br/brasil-acessivel/brasil-acessivel.AppImage">
+            Baixar AppImage
+        </a>
+    </details>
+
+    <details>
+        <summary>Debian / Ubuntu (.deb)</summary>
+        <p>
+            Pacote para sistemas baseados em Debian.
+        </p>
+        <a class="download-link"
+           href="https://eternal-legend.com.br/brasil-acessivel/brasil-acessivel.deb">
+            Baixar .deb
+        </a>
+    </details>
+
+    <details>
+        <summary>Fedora / Red Hat (.rpm)</summary>
+        <p>
+            Pacote para distribuições baseadas em RPM.
+        </p>
+        <a class="download-link"
+           href="https://eternal-legend.com.br/brasil-acessivel/brasil-acessivel.rpm">
+            Baixar .rpm
+        </a>
+    </details>
+
+    <details>
+        <summary>Binário Linux</summary>
+        <p>
+            Versão binária direta para execução manual.
+        </p>
+        <a class="download-link"
+           href="https://eternal-legend.com.br/brasil-acessivel/brasil-acessivel-binary">
+            Baixar binário
+        </a>
+    </details>
+
+    <!-- ANDROID -->
+    <h3>Android</h3>
+    <p>
+        Aplicativo disponível na Google Play.
+    </p>
+    <a class="download-link"
+       href="https://play.google.com/store/apps/details?id=masterjf.brasil.acessivel">
+        Baixar na Play Store
+    </a>
+
+    <!-- IPHONE -->
+    <h3>iPhone (iOS)</h3>
+    <p>
+        Funciona como aplicativo web, sem necessidade da App Store.
+    </p>
+    <ol>
+        <li>Acesse o site no Safari</li>
+        <li>Toque em Compartilhar</li>
+        <li>Selecione “Adicionar à Tela de Início”</li>
+    </ol>
+
+    <!-- MAC -->
+    <h3>macOS</h3>
+    <p>
+        Versão em desenvolvimento.
+    </p>
+
+</section>
+
+<section class="box">
+    <h2>Tutoriais</h2>
+
+    <ul>
+        <li>
+            <a href="https://youtu.be/XpObApEZjeM">
+                Tutorial – Uso e instalação no iPhone
             </a>
-        </p>
-
-        <h3>iPhone (iOS)</h3>
-        <p>
-            No iPhone, o Brasil Acessível funciona como um aplicativo via navegador (PWA).
-        </p>
-        <ol>
-            <li>Acesse o site aqui: <a href="https://masterjf-solucoes.com.br/">https://masterjf-solucoes.com.br/</a></li>
-            <li>Abra no Safari ou qualquer outro navegador padrão</li>
-            <li>Toque em Compartilhar</li>
-            <li>Selecione “Adicionar à Tela de Início”</li>
-        </ol>
-
-        <h3>Windows</h3>
-        <ul>
-            <li>
-                Instalador MSI (x64):
-                <a href="https://eternal-legend.com.br/brasil-acessivel/brasil-acessivel.msi">
-                    Download do instalador
-                </a>
-            </li>
-            <li>
-                Versão portátil:
-                <strong>brasil-acessivel-portatil.exe</strong>
-            </li>
-            <li>
-                Winget:
-                <code>winget install azurejoga.brasilacessivel</code>
-            </li>
-            <li>
-                Chocolatey:
-                <code>choco install brasil-acessivel --version=1.0.0</code>
-            </li>
-        </ul>
-
-        <h3>Linux</h3>
-        <ul>
-            <li><strong>AppImage:</strong> brasil-acessivel.AppImage</li>
-            <li><strong>Debian/Ubuntu:</strong> brasil-acessivel.deb</li>
-            <li><strong>RPM:</strong> brasil-acessivel.rpm</li>
-            <li><strong>Binário:</strong> brasil-acessivel-binary</li>
-        </ul>
-
-        <h3>macOS</h3>
-        <p>Em desenvolvimento.</p>
-    </section>
-
-    <!-- TUTORIAIS -->
-    <section class="box">
-        <h2>Tutoriais</h2>
-        <ul>
-            <li>
-                Tutorial de uso e instalação no iPhone:
-                <a href="https://youtu.be/XpObApEZjeM">
-                    Assistir no YouTube
-                </a>
-            </li>
-            <li>
-                Tutorial de utilização no Android:
-                <a href="https://youtu.be/Sui7XswJqYk">
-                    Assistir no YouTube
-                </a>
-            </li>
-        </ul>
-    </section>
-
-    <!-- LEGAL -->
-    <section class="legal">
-        <h2>Aviso Importante – Brasil Acessível</h2>
-        <p>
-            O Brasil Acessível é um aplicativo gratuito, sem fins comerciais,
-            criado para promover acessibilidade cultural para pessoas com deficiência visual.
-        </p>
-        <p>
-            Sua disponibilização é amparada pela Lei de Direitos Autorais (Lei nº 9.610/98),
-            Artigo 46, que permite a reprodução de obras para uso exclusivo de pessoas com
-            deficiência visual.
-        </p>
-        <p><strong>Acessibilidade não é privilégio. É direito.</strong></p>
-    </section>
-
-    <!-- CONTATO -->
-    <section>
-        <h2>Contato e comunidade</h2>
-
-        <p>
-            E-mail:
-            <a href="mailto:fjhonata14@gmail.com">
-                fjhonata14@gmail.com
+        </li>
+        <li>
+            <a href="https://youtu.be/Sui7XswJqYk">
+                Tutorial – Utilização no Android
             </a>
-        </p>
+        </li>
+    </ul>
+</section>
 
-        <p>
-            Grupo do WhatsApp:
-            <a href="https://chat.whatsapp.com/FkkgzDd0i73FcS8rWZbFGh">
-                Entrar no grupo
-            </a>
-        </p>
+<section class="box">
+    <h2>Contato e comunidade</h2>
 
-        <p>
-            Canal do WhatsApp:
-            <a href="https://whatsapp.com/channel/0029VbCO90GDjiOksJKXNs0b">
-                Seguir o canal
-            </a>
-        </p>
-    </section>
+    <p>
+        E-mail:
+        <a href="mailto:fjhonata14@gmail.com">
+            fjhonata14@gmail.com
+        </a>
+    </p>
+
+    <p>
+        <a href="https://chat.whatsapp.com/FkkgzDd0i73FcS8rWZbFGh">
+            Entrar no grupo do WhatsApp
+        </a>
+    </p>
+
+    <p>
+        <a href="https://whatsapp.com/channel/0029VbCO90GDjiOksJKXNs0b">
+            Seguir o canal do WhatsApp
+        </a>
+    </p>
+</section>
 
 </main>
-
-<footer>
-    <script src="/footer.js"></script>
-</footer>
 
 </body>
 </html>
