@@ -43,8 +43,8 @@
             margin-bottom: 45px;
         }
 
-        ul {
-            padding-left: 20px;
+        ul, ol {
+            padding-left: 22px;
         }
 
         li {
@@ -56,8 +56,7 @@
             text-decoration: underline;
         }
 
-        .categories,
-        .features {
+        .box {
             background-color: #06101a;
             padding: 20px;
             border-radius: 6px;
@@ -77,45 +76,126 @@
 
 <header>
     <img src="brasilacessivel-logo.png"
-         alt="O logotipo está centralizado sobre um fundo azul-marinho escuro. Ele é composto por um ícone gráfico à esquerda e um texto à direita. O ícone tem o formato de um marcador de mapa estilizado com elementos de cinema e deficiência visual. A parte superior verde possui uma tira de filme envolvendo um botão de play branco e ondas sonoras amarelas. A parte inferior amarela apresenta seis pontos verdes em relevo representando uma célula Braille. Ao lado, o texto BRASIL em amarelo, ACESSÍVEL em branco sublinhado e o slogan Filmes, Séries, Livros e novelas com Audiodescrição.">
+         alt="Logotipo do Brasil Acessível com ícone inspirado em cinema, áudio e Braille, nas cores da bandeira do Brasil, e o texto Brasil Acessível – Filmes, Séries, Livros e Novelas com Audiodescrição.">
 </header>
 
 <main>
 
+    <!-- APRESENTAÇÃO -->
     <section>
         <h1>Bem-vindo ao Brasil Acessível</h1>
         <p>
             O Brasil Acessível é uma plataforma criada para garantir acesso à cultura,
             ao entretenimento e à informação para pessoas cegas e com deficiência visual,
-            por meio de conteúdos com audiodescrição e navegação acessível.
+            por meio de conteúdos com audiodescrição e navegação totalmente acessível.
         </p>
     </section>
 
-    <section class="categories">
+    <!-- CONTEÚDOS -->
+    <section class="box">
         <h2>Conteúdos disponíveis</h2>
         <ul>
             <li><strong>Filmes</strong> – Mais de 1.700 títulos com audiodescrição</li>
             <li><strong>Séries</strong> – Mais de 400 séries acessíveis</li>
-            <li><strong>Novelas</strong> – Conteúdos clássicos e atuais com audiodescrição</li>
+            <li><strong>Novelas</strong> – Conteúdos clássicos e atuais</li>
             <li><strong>Livros</strong> – Livros e audiolivros acessíveis</li>
         </ul>
     </section>
 
-    <section class="features">
-        <h2>Recursos do Brasil Acessível</h2>
+    <!-- RECURSOS -->
+    <section class="box">
+        <h2>Recursos da plataforma</h2>
         <ul>
             <li>Adicionar filmes, séries, novelas e livros aos <strong>Favoritos</strong></li>
-            <li><strong>Retomar automaticamente</strong> o conteúdo de onde você parou</li>
+            <li><strong>Retomar automaticamente</strong> de onde você parou</li>
             <li>Busca simples e acessível por título</li>
             <li>Navegação otimizada para leitores de tela</li>
             <li>Interface limpa, direta e sem excesso visual</li>
             <li><strong>Fazer login</strong> para salvar preferências</li>
-            <li><strong>Criar conta</strong> de forma simples e acessível</li>
-            <li><strong>Entrar sem conta</strong> para acesso rápido ao conteúdo</li>
-            <li>Compatibilidade com celular e computador</li>
+            <li><strong>Criar conta</strong> de forma simples</li>
+            <li><strong>Entrar sem conta</strong> para acesso rápido</li>
         </ul>
     </section>
 
+    <!-- PLATAFORMAS -->
+    <section>
+        <h2>Plataformas e downloads</h2>
+
+        <h3>Android</h3>
+        <p>
+            Aplicativo completo com suporte total a leitores de tela.
+        </p>
+        <p>
+            <a href="https://play.google.com/store/apps/details?id=masterjf.brasil.acessivel">
+                Baixar na Google Play
+            </a>
+        </p>
+
+        <h3>iPhone (iOS)</h3>
+        <p>
+            No iPhone, o Brasil Acessível funciona como um aplicativo via navegador (PWA).
+        </p>
+        <ol>
+            <li>Acesse o site aqui: <a href="https://masterjf-solucoes.com.br/">https://masterjf-solucoes.com.br/</a></li>
+            <li>Abra no Safari ou qualquer outro navegador padrão</li>
+            <li>Toque em Compartilhar</li>
+            <li>Selecione “Adicionar à Tela de Início”</li>
+        </ol>
+
+        <h3>Windows</h3>
+        <ul>
+            <li>
+                Instalador MSI (x64):
+                <a href="https://eternal-legend.com.br/brasil-acessivel/brasil-acessivel.msi">
+                    Download do instalador
+                </a>
+            </li>
+            <li>
+                Versão portátil:
+                <strong>brasil-acessivel-portatil.exe</strong>
+            </li>
+            <li>
+                Winget:
+                <code>winget install azurejoga.brasilacessivel</code>
+            </li>
+            <li>
+                Chocolatey:
+                <code>choco install brasil-acessivel --version=1.0.0</code>
+            </li>
+        </ul>
+
+        <h3>Linux</h3>
+        <ul>
+            <li><strong>AppImage:</strong> brasil-acessivel.AppImage</li>
+            <li><strong>Debian/Ubuntu:</strong> brasil-acessivel.deb</li>
+            <li><strong>RPM:</strong> brasil-acessivel.rpm</li>
+            <li><strong>Binário:</strong> brasil-acessivel-binary</li>
+        </ul>
+
+        <h3>macOS</h3>
+        <p>Em desenvolvimento.</p>
+    </section>
+
+    <!-- TUTORIAIS -->
+    <section class="box">
+        <h2>Tutoriais</h2>
+        <ul>
+            <li>
+                Tutorial de uso e instalação no iPhone:
+                <a href="https://youtu.be/XpObApEZjeM">
+                    Assistir no YouTube
+                </a>
+            </li>
+            <li>
+                Tutorial de utilização no Android:
+                <a href="https://youtu.be/Sui7XswJqYk">
+                    Assistir no YouTube
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    <!-- LEGAL -->
     <section class="legal">
         <h2>Aviso Importante – Brasil Acessível</h2>
         <p>
@@ -123,60 +203,20 @@
             criado para promover acessibilidade cultural para pessoas com deficiência visual.
         </p>
         <p>
-            Sua disponibilização é legalmente amparada pela Lei de Direitos Autorais
-            (Lei nº 9.610/98), Artigo 46, que permite a reprodução de obras para uso exclusivo
-            de pessoas com deficiência visual.
+            Sua disponibilização é amparada pela Lei de Direitos Autorais (Lei nº 9.610/98),
+            Artigo 46, que permite a reprodução de obras para uso exclusivo de pessoas com
+            deficiência visual.
         </p>
-        <p>
-            <strong>Acessibilidade não é privilégio. É direito.</strong>
-        </p>
+        <p><strong>Acessibilidade não é privilégio. É direito.</strong></p>
     </section>
 
-    <section>
-        <h2>Aplicativos disponíveis</h2>
-
-        <h3>Android</h3>
-        <p>
-            O aplicativo Android oferece acesso completo à plataforma,
-            com navegação otimizada para leitores de tela.
-        </p>
-        <p>
-            <a href="https://play.google.com/store/apps/details?id=masterjf.brasil.acessivel">
-                Baixar o aplicativo para Android
-            </a>
-        </p>
-
-        <h3>iPhone</h3>
-        <p>
-            No iPhone, o Brasil Acessível funciona como um aplicativo via navegador,
-            sem necessidade de instalação pela App Store.
-        </p>
-        <ol>
-            <li>Acesse o site aqui: <a href="https://masterjf-solucoes.com.br/">https://masterjf-solucoes.com.br/</a></li>
-            <li>Abra no Safari</li>
-            <li>Toque em Compartilhar</li>
-            <li>Selecione “Adicionar à Tela de Início”</li>
-        </ol>
-
-        <h3>Windows</h3>
-        <p>
-            Para Windows, disponibilizamos um instalador dedicado.
-        </p>
-        <p>
-            <a href="https://eternal-legend.com.br/brasil-acessivel/brasil-acessivel.msi">
-                Baixar instalador para Windows (x86 / x64)
-            </a>
-        </p>
-
-        <h3>Linux e macOS</h3>
-        <p>Em breve.</p>
-    </section>
-
+    <!-- CONTATO -->
     <section>
         <h2>Contato e comunidade</h2>
+
         <p>
             E-mail:
-            <a href="mailto:contato@masterjf-solucoes.com.br">
+            <a href="mailto:fjhonata14@gmail.com">
                 fjhonata14@gmail.com
             </a>
         </p>
