@@ -122,18 +122,22 @@
 <section class="box">
     <h2>Plataformas disponíveis</h2>
 
-    <!-- WEB -->
     <h3>Web</h3>
     <p>Acesse diretamente pelo navegador.</p>
     <a class="download-link" href="https://masterjf-solucoes.com.br">
         Acessar versão web
     </a>
 
-    <!-- WINDOWS -->
     <h3>Windows</h3>
 
     <details>
         <summary>Instalador MSI (x64)</summary>
+        <p>
+            Recomendado para a maioria dos usuários do Windows.
+            Instala o Brasil Acessível como um aplicativo tradicional,
+            integrando-se ao menu Iniciar, área de trabalho e lista de programas.
+            Ideal para quem deseja uma instalação simples, automática e segura.
+        </p>
         <a class="download-link"
            href="https://eternal-legend.com.br/brasil-acessivel/brasil-acessivel.msi">
             Baixar instalador
@@ -142,6 +146,13 @@
 
     <details>
         <summary>Versão portátil</summary>
+        <p>
+            Versão que não requer instalação.
+            Pode ser executada diretamente a partir de um pendrive,
+            HD externo ou pasta local.
+            Indicada para computadores com restrições de instalação
+            ou para uso temporário.
+        </p>
         <a class="download-link"
            href="https://eternal-legend.com.br/brasil-acessivel/brasil-acessivel-p.exe">
             Baixar versão portátil
@@ -150,7 +161,11 @@
 
     <details>
         <summary>Instalação via Winget</summary>
-        <p>Gerenciador de pacotes oficial do Windows.</p>
+        <p>
+            Método oficial de instalação via gerenciador de pacotes do Windows.
+            Ideal para usuários avançados, técnicos e administradores de sistemas.
+            Permite instalação e atualização automáticas via linha de comando.
+        </p>
         <code id="cmd-winget">winget install azurejoga.brasilacessivel</code>
         <button class="copy-btn" onclick="copiarComando('cmd-winget')">
             Copiar comando
@@ -159,18 +174,27 @@
 
     <details>
         <summary>Instalação via Chocolatey</summary>
-        <p>Gerenciador de pacotes avançado.</p>
+        <p>
+            Método avançado de instalação via Chocolatey.
+            Recomendado para usuários que já utilizam este gerenciador
+            para manter softwares sempre atualizados automaticamente.
+        </p>
         <code id="cmd-choco">choco install brasil-acessivel --version=1.0.0</code>
         <button class="copy-btn" onclick="copiarComando('cmd-choco')">
             Copiar comando
         </button>
     </details>
 
-    <!-- LINUX -->
     <h3>Linux</h3>
 
     <details>
         <summary>AppImage</summary>
+        <p>
+            Formato portátil para Linux.
+            Funciona em praticamente qualquer distribuição
+            sem necessidade de instalação.
+            Basta baixar, tornar executável e abrir.
+        </p>
         <a class="download-link"
            href="https://eternal-legend.com.br/brasil-acessivel/brasil-acessivel.AppImage">
             Baixar AppImage
@@ -179,6 +203,11 @@
 
     <details>
         <summary>Debian / Ubuntu (.deb)</summary>
+        <p>
+            Pacote oficial para distribuições baseadas em Debian,
+            como Ubuntu, Linux Mint e derivados.
+            Integra-se ao sistema e ao menu de aplicativos.
+        </p>
         <a class="download-link"
            href="https://eternal-legend.com.br/brasil-acessivel/brasil-acessivel.deb">
             Baixar .deb
@@ -187,6 +216,11 @@
 
     <details>
         <summary>RPM (Fedora, RHEL, AlmaLinux, Rocky, openSUSE)</summary>
+        <p>
+            Pacote RPM compatível com distribuições baseadas em Red Hat.
+            Permite instalação via gerenciador de pacotes do sistema,
+            garantindo melhor integração e atualizações futuras.
+        </p>
         <a class="download-link"
            href="https://eternal-legend.com.br/brasil-acessivel/brasil-acessivel.rpm">
             Baixar .rpm
@@ -195,20 +229,23 @@
 
     <details>
         <summary>Binário Linux</summary>
+        <p>
+            Executável direto para Linux.
+            Não requer instalação nem permissões administrativas.
+            Ideal para ambientes restritos ou uso avançado.
+        </p>
         <a class="download-link"
            href="https://eternal-legend.com.br/brasil-acessivel/brasil-acessivel-binary">
             Baixar binário
         </a>
     </details>
 
-    <!-- ANDROID -->
     <h3>Android</h3>
     <a class="download-link"
        href="https://play.google.com/store/apps/details?id=masterjf.brasil.acessivel">
         Baixar na Play Store
     </a>
 
-    <!-- IPHONE -->
     <h3>iPhone (iOS – PWA)</h3>
     <p>
         No iPhone, o Brasil Acessível funciona como um
@@ -222,7 +259,6 @@
         <li>O app será instalado como um aplicativo normal</li>
     </ol>
 
-    <!-- MAC -->
     <h3>macOS</h3>
     <p>Versão em desenvolvimento.</p>
 
